@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurante tradicional — Caldas da Rainha · A Sua Tasca (demonstração)</title>
+<meta name="description" content="Restaurante tradicional perto de Caldas da Rainha e Salir do Porto: arroz de marisco, bacalhau à Brás, prato do dia 9,50 €. Traditional Portuguese restaurant near Foz do Arelho — 5 minutes from the beach.">
+<meta property="og:title" content="A Sua Tasca — cozinha portuguesa de verdade, a 5 minutos da praia">
+<meta property="og:description" content="Arroz de marisco 14,50 € · Bacalhau à Brás 11 € · Prato do dia 9,50 €. Restaurante tradicional entre Caldas da Rainha e Salir do Porto. Traditional Portuguese food near Foz do Arelho.">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍷</text></svg>">
+<style>
+  :root{
+    --bg:#faf6ef; --card:#fffdf9; --tint:#f6e8df; --tint2:#faf0e8;
+    --ink:#33261e; --muted:#7c6a5c; --border:#ecdfd2;
+    --terra:#b5502f; --terra-deep:#9c3f22; --terra-dark:#7f3018;
+    --wa:#148f43; --wa-dark:#0f7a38; --star:#dd9a34;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --serif:ui-serif,Georgia,"Times New Roman",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--terra-deep)}
+
+  /* language switching */
+  body[data-lang="en"] [data-lang="pt"]{display:none !important}
+  body[data-lang="pt"] [data-lang="en"]{display:none !important}
+
+  /* demo ribbon */
+  .demo-ribbon{position:fixed;top:0;right:0;width:170px;height:170px;overflow:hidden;pointer-events:none;z-index:60}
+  .demo-ribbon span{position:absolute;display:block;width:260px;padding:7px 0;right:-64px;top:46px;
+    transform:rotate(45deg);background:var(--terra-deep);color:#fff;text-align:center;
+    font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    box-shadow:0 2px 8px rgba(127,48,24,.35)}
+
+  /* header */
+  header{padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:22px;font-weight:700}
+  .brand em{font-style:normal;color:var(--terra-deep)}
+  .lang-switch{display:flex;gap:4px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:3px}
+  .lang-btn{border:0;background:transparent;border-radius:999px;padding:7px 15px;font:600 13.5px var(--sans);
+    color:var(--muted);cursor:pointer;min-height:34px}
+  .lang-btn[aria-pressed="true"]{background:var(--terra);color:#fff}
+
+  /* azulejo-ish divider strip */
+  .tile-strip{height:8px;border-radius:4px;margin:2px 0 18px;
+    background:repeating-linear-gradient(45deg,var(--terra) 0 10px,var(--tint) 10px 20px,var(--terra-deep) 20px 30px,var(--card) 30px 40px)}
+
+  /* hero */
+  .hero{background:linear-gradient(165deg,var(--tint) 0%,var(--tint2) 55%,var(--bg) 100%);
+    border:1px solid var(--border);border-radius:20px;padding:44px 26px 40px;text-align:center}
+  .eyebrow{display:inline-block;background:#fff;border:1px solid var(--border);border-radius:999px;
+    padding:5px 14px;font-size:12.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--terra-deep)}
+  h1{font-family:var(--serif);font-size:clamp(29px,6.2vw,46px);line-height:1.12;margin:18px auto 12px;max-width:24ch}
+  .sub{color:var(--muted);font-size:clamp(16px,2.6vw,19px);max-width:50ch;margin:0 auto}
+  .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .chip{background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--muted)}
+  .cta-row{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:13px 22px;
+    border-radius:12px;text-decoration:none;font-weight:700;font-size:16px;border:1px solid transparent}
+  .btn svg{flex:none}
+  .btn-tel{background:var(--terra);color:#fff;box-shadow:0 3px 10px rgba(181,80,47,.25)}
+  .btn-tel:active{background:var(--terra-deep)}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 3px 10px rgba(20,143,67,.25)}
+  .btn-wa:active{background:var(--wa-dark)}
+  .hero-note{margin-top:14px;color:var(--muted);font-size:13.5px}
+
+  /* sections */
+  section{margin:56px 0}
+  h2{font-family:var(--serif);font-size:clamp(23px,4vw,30px);line-height:1.2;margin-bottom:6px}
+  .lead{color:var(--muted);font-size:15.5px;margin-bottom:20px;max-width:58ch}
+  .accent-bar{width:44px;height:4px;border-radius:2px;background:var(--terra);margin:12px 0 18px}
+
+  /* menu */
+  .menu{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px 24px}
+  .menu h3{font-family:var(--serif);font-size:17px;color:var(--terra-deep);margin:18px 0 6px;letter-spacing:.3px}
+  .menu h3:first-child{margin-top:0}
+  .dish{display:flex;align-items:baseline;gap:8px;padding:9px 0;border-bottom:1px dashed var(--border)}
+  .dish:last-of-type{border-bottom:0}
+  .dish .name{font-weight:600}
+  .dish .desc{color:var(--muted);font-size:13.5px;font-weight:400}
+  .dish .dots{flex:1;border-bottom:2px dotted var(--border);transform:translateY(-4px)}
+  .dish .price{font-weight:700;color:var(--terra-dark);white-space:nowrap}
+  .menu-note{margin-top:16px;background:var(--tint2);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--muted)}
+  .menu-note b{color:var(--ink)}
+
+  /* reservation panel */
+  .reserve{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px 24px;text-align:center}
+  .reserve .cta-row{margin-top:18px}
+  .tel-big{font-family:var(--serif);font-size:clamp(22px,4.5vw,30px);font-weight:700;color:var(--terra-dark);text-decoration:none}
+
+  /* reviews */
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .review{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+  .stars{color:var(--star);font-size:15px;letter-spacing:2px;margin-bottom:8px}
+  .review p{font-size:14.5px}
+  .review footer{margin-top:10px;color:var(--muted);font-size:13px;font-weight:600}
+
+  /* hours + directions */
+  .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+  .hours{width:100%;border-collapse:collapse;font-size:15px}
+  .hours td{padding:8px 0;border-bottom:1px dashed var(--border)}
+  .hours tr:last-child td{border-bottom:0}
+  .hours td:last-child{text-align:right;color:var(--muted)}
+  .hours .closed td:last-child{color:var(--terra-deep);font-weight:600}
+  .dir-list{list-style:none;font-size:14.5px}
+  .dir-list li{padding:7px 0 7px 26px;position:relative;color:var(--muted)}
+  .dir-list li::before{content:"→";position:absolute;left:2px;color:var(--terra);font-weight:700}
+  .map{border:2px dashed var(--terra);border-radius:16px;min-height:200px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;color:var(--muted);font-size:14px;
+    background:repeating-linear-gradient(0deg,var(--tint2) 0 1px,transparent 1px 34px),
+               repeating-linear-gradient(90deg,var(--tint2) 0 1px,transparent 1px 34px),#fff;margin-top:14px}
+  .map svg{color:var(--terra-deep)}
+
+  /* footer */
+  .site-footer{border-top:1px solid var(--border);margin-top:64px;padding:30px 0 44px;color:var(--muted);font-size:13.5px;text-align:center}
+  .site-footer p+p{margin-top:8px}
+
+  /* sticky bottom bar (mobile) */
+  .book-bar{display:none}
+  @media (max-width:760px){
+    body{padding-bottom:92px}
+    .book-bar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;
+      background:rgba(250,246,239,.96);border-top:1px solid var(--border);
+      padding:10px 14px calc(10px + env(safe-area-inset-bottom));backdrop-filter:blur(6px)}
+    .book-bar .btn{flex:1;padding:13px 10px;font-size:15px}
+  }
+</style>
+</head>
+<body data-lang="pt">
+
+<div class="demo-ribbon" aria-hidden="true"><span data-lang="pt">Demonstração — a sua marca aqui</span><span data-lang="en" lang="en">Demo — your brand here</span></div>
+
+<div class="wrap">
+
+  <header>
+    <span class="brand">A Sua <em>Tasca</em></span>
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button type="button" class="lang-btn" data-setlang="pt" aria-pressed="true">PT</button>
+      <button type="button" class="lang-btn" data-setlang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <div class="tile-strip" aria-hidden="true"></div>
+
+  <div class="hero">
+    <span class="eyebrow" data-lang="pt">Restaurante tradicional · Caldas da Rainha — Salir do Porto</span>
+    <span class="eyebrow" data-lang="en" lang="en">Traditional restaurant · Caldas da Rainha — Salir do Porto</span>
+
+    <h1 data-lang="pt">Cozinha portuguesa de verdade, a 5 minutos da praia</h1>
+    <h1 data-lang="en" lang="en">Real Portuguese home cooking, 5 minutes from the beach</h1>
+
+    <p class="sub" data-lang="pt">Peixe fresco, pratos do dia e vinho da casa, entre as Caldas da Rainha e Salir do Porto. Sem pressas, sem armadilhas para turistas — comida de tacho, como deve ser.</p>
+    <p class="sub" data-lang="en" lang="en">Fresh fish, daily specials and house wine, between Caldas da Rainha and Salir do Porto. No rush, no tourist traps — honest Portuguese cooking, the way it should be.</p>
+
+    <div class="chips">
+      <span class="chip" data-lang="pt">✓ Prato do dia 9,50 €</span>
+      <span class="chip" data-lang="pt">✓ Perto da Foz do Arelho</span>
+      <span class="chip" data-lang="pt">✓ Estacionamento à porta</span>
+      <span class="chip" data-lang="en" lang="en">✓ Dish of the day €9.50</span>
+      <span class="chip" data-lang="en" lang="en">✓ Near Foz do Arelho</span>
+      <span class="chip" data-lang="en" lang="en">✓ Free parking outside</span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-tel" href="tel:+351900000000">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span data-lang="pt">Ligar para reservar</span><span data-lang="en" lang="en">Call to book</span>
+      </a>
+      <a class="btn btn-wa" data-lang="pt" href="https://wa.me/351900000000?text=Olá!%20Queria%20reservar%20uma%20mesa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Reservar por WhatsApp
+      </a>
+      <a class="btn btn-wa" data-lang="en" lang="en" href="https://wa.me/351900000000?text=Hello!%20I%20would%20like%20to%20book%20a%20table">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book on WhatsApp
+      </a>
+    </div>
+    <p class="hero-note" data-lang="pt">Grupos e mesas na esplanada: é melhor reservar com um dia de antecedência.</p>
+    <p class="hero-note" data-lang="en" lang="en">Groups and terrace tables: best to book a day ahead in summer.</p>
+  </div>
+
+  <section id="ementa">
+    <h2 data-lang="pt">A ementa de hoje</h2>
+    <h2 data-lang="en" lang="en">Today's menu</h2>
+    <div class="accent-bar"></div>
+    <p class="lead" data-lang="pt">Muda todos os dias conforme o mercado e a maré. Isto é um exemplo de um dia normal.</p>
+    <p class="lead" data-lang="en" lang="en">Changes daily with the market and the tide. This is what a typical day looks like.</p>
+
+    <div class="menu" data-lang="pt">
+      <h3>Para começar</h3>
+      <div class="dish"><span class="name">Sopa do dia</span><span class="dots"></span><span class="price">2,50&nbsp;€</span></div>
+      <div class="dish"><span class="name">Couvert da casa <span class="desc">— pão, azeitonas, manteiga</span></span><span class="dots"></span><span class="price">2,00&nbsp;€</span></div>
+      <h3>Pratos</h3>
+      <div class="dish"><span class="name">Arroz de marisco <span class="desc">— malandrinho, bem servido</span></span><span class="dots"></span><span class="price">14,50&nbsp;€</span></div>
+      <div class="dish"><span class="name">Bacalhau à Brás</span><span class="dots"></span><span class="price">11,00&nbsp;€</span></div>
+      <div class="dish"><span class="name">Prato do dia <span class="desc">— com sopa e café incluídos</span></span><span class="dots"></span><span class="price">9,50&nbsp;€</span></div>
+      <h3>Para acompanhar e terminar</h3>
+      <div class="dish"><span class="name">Vinho da casa <span class="desc">— jarro de ½ litro</span></span><span class="dots"></span><span class="price">4,50&nbsp;€</span></div>
+      <div class="dish"><span class="name">Pudim caseiro</span><span class="dots"></span><span class="price">3,00&nbsp;€</span></div>
+      <p class="menu-note"><b>Jantar para dois, com vinho e sobremesa: 30–40 €.</b> Meias doses disponíveis em quase todos os pratos.</p>
+    </div>
+
+    <div class="menu" data-lang="en" lang="en">
+      <h3>To start</h3>
+      <div class="dish"><span class="name">Soup of the day</span><span class="dots"></span><span class="price">€2.50</span></div>
+      <div class="dish"><span class="name">Couvert <span class="desc">— bread, olives, butter</span></span><span class="dots"></span><span class="price">€2.00</span></div>
+      <h3>Mains</h3>
+      <div class="dish"><span class="name">Arroz de marisco <span class="desc">— brothy seafood rice, generous</span></span><span class="dots"></span><span class="price">€14.50</span></div>
+      <div class="dish"><span class="name">Bacalhau à Brás <span class="desc">— salt cod, egg &amp; crispy potato</span></span><span class="dots"></span><span class="price">€11.00</span></div>
+      <div class="dish"><span class="name">Dish of the day <span class="desc">— soup and coffee included</span></span><span class="dots"></span><span class="price">€9.50</span></div>
+      <h3>To drink and finish</h3>
+      <div class="dish"><span class="name">House wine <span class="desc">— ½ litre jug</span></span><span class="dots"></span><span class="price">€4.50</span></div>
+      <div class="dish"><span class="name">Homemade pudim <span class="desc">— Portuguese caramel flan</span></span><span class="dots"></span><span class="price">€3.00</span></div>
+      <p class="menu-note"><b>Dinner for two, with wine and dessert: €30–40.</b> Half portions available for most dishes.</p>
+    </div>
+  </section>
+
+  <section id="reservas">
+    <h2 data-lang="pt">Reservas</h2>
+    <h2 data-lang="en" lang="en">Reservations</h2>
+    <div class="accent-bar"></div>
+    <div class="reserve">
+      <p data-lang="pt">Ligue-nos ou mande mensagem — confirmamos a mesa na hora.</p>
+      <p data-lang="en" lang="en">Call us or send a message — we confirm your table right away.</p>
+      <p style="margin-top:10px"><a class="tel-big" href="tel:+351900000000">+351 900 000 000</a></p>
+      <div class="cta-row">
+        <a class="btn btn-tel" href="tel:+351900000000">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span data-lang="pt">Ligar agora</span><span data-lang="en" lang="en">Call now</span>
+        </a>
+        <a class="btn btn-wa" data-lang="pt" href="https://wa.me/351900000000?text=Olá!%20Queria%20reservar%20uma%20mesa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar por WhatsApp
+        </a>
+        <a class="btn btn-wa" data-lang="en" lang="en" href="https://wa.me/351900000000?text=Hello!%20I%20would%20like%20to%20book%20a%20table">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="opinioes">
+    <h2 data-lang="pt">Quem cá come, volta</h2>
+    <h2 data-lang="en" lang="en">People who eat here come back</h2>
+    <div class="accent-bar"></div>
+    <div class="reviews">
+      <article class="review">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p lang="pt-PT">«O arroz de marisco é dos melhores que já comi. Casa cheia de gente da terra — bom sinal.»</p>
+        <footer>João M. · Caldas da Rainha</footer>
+      </article>
+      <article class="review">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p lang="pt-PT">«Comida como a da minha avó, doses generosas e uma conta honesta. Voltamos sempre.»</p>
+        <footer>Teresa L. · Salir do Porto</footer>
+      </article>
+      <article class="review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p lang="en">"Stopped here on our way back from Foz do Arelho — best meal of our whole holiday. Ask for the house wine."</p>
+        <footer>Sarah K. · visiting from the UK</footer>
+      </article>
+    </div>
+  </section>
+
+  <section id="horario">
+    <h2 data-lang="pt">Horário e como chegar</h2>
+    <h2 data-lang="en" lang="en">Hours and how to find us</h2>
+    <div class="accent-bar"></div>
+    <div class="split">
+      <div class="panel">
+        <table class="hours" data-lang="pt">
+          <tr><td>Terça a domingo — almoço</td><td>12:00 – 15:00</td></tr>
+          <tr><td>Terça a domingo — jantar</td><td>19:00 – 22:00</td></tr>
+          <tr class="closed"><td>Segunda-feira</td><td>Encerrado</td></tr>
+        </table>
+        <table class="hours" data-lang="en" lang="en">
+          <tr><td>Tue–Sun — lunch</td><td>12:00 – 15:00</td></tr>
+          <tr><td>Tue–Sun — dinner</td><td>19:00 – 22:00</td></tr>
+          <tr class="closed"><td>Monday</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <ul class="dir-list" data-lang="pt">
+          <li>Na estrada entre as Caldas da Rainha e Salir do Porto</li>
+          <li>A 5 minutos da praia de Salir do Porto e da lagoa da Foz do Arelho</li>
+          <li>A 10 minutos do centro das Caldas · estacionamento gratuito à porta</li>
+        </ul>
+        <ul class="dir-list" data-lang="en" lang="en">
+          <li>On the road between Caldas da Rainha and Salir do Porto</li>
+          <li>5 minutes from Salir do Porto beach and the Foz do Arelho lagoon</li>
+          <li>10 minutes from central Caldas · free parking outside</li>
+        </ul>
+      </div>
+    </div>
+    <div class="map" role="img" aria-label="Espaço reservado para o mapa / map placeholder">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <strong data-lang="pt">O seu mapa aqui</strong>
+      <strong data-lang="en" lang="en">Your map here</strong>
+      <span data-lang="pt">Na versão final desta página, o Google Maps com a localização exata do seu restaurante aparece neste espaço.</span>
+      <span data-lang="en" lang="en">In the final version of this page, Google Maps with your restaurant's exact location goes here.</span>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p data-lang="pt"><strong>A Sua Tasca</strong> — página de demonstração criada por <a href="https://bgreiff.github.io/kreate-site/">kreate.online</a>.</p>
+    <p data-lang="pt">O nome, o número de telefone, a ementa, as opiniões e a localização são exemplos. A sua versão leva a sua marca e os seus dados reais — pronta em 48 horas.</p>
+    <p data-lang="en" lang="en"><strong>A Sua Tasca</strong> — demo page built by <a href="https://bgreiff.github.io/kreate-site/">kreate.online</a>.</p>
+    <p data-lang="en" lang="en">The name, phone number, menu, reviews and location are examples. Your version carries your real brand and details — ready in 48 hours.</p>
+  </footer>
+
+</div>
+
+<div class="book-bar">
+  <a class="btn btn-tel" href="tel:+351900000000">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    <span data-lang="pt">Ligar</span><span data-lang="en" lang="en">Call</span>
+  </a>
+  <a class="btn btn-wa" data-lang="pt" href="https://wa.me/351900000000?text=Olá!%20Queria%20reservar%20uma%20mesa">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Reservar
+  </a>
+  <a class="btn btn-wa" data-lang="en" lang="en" href="https://wa.me/351900000000?text=Hello!%20I%20would%20like%20to%20book%20a%20table">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Book
+  </a>
+</div>
+
+<script>
+(function(){
+  var setLang=function(l){
+    document.body.dataset.lang=l;
+    document.documentElement.lang=(l==='en')?'en':'pt-PT';
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.setAttribute('aria-pressed',String(b.dataset.setlang===l));
+    });
+  };
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.dataset.setlang);});
+  });
+})();
+</script>
+
+</body>
+</html>
