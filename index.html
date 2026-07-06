@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kreate.online — landing pages in 48 hours, built by Claude</title>
+<meta name="description" content="A complete landing page — copy, design, code — delivered in 48 hours, built by Claude (the AI). €149 flat, two revisions, full refund if not satisfied.">
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d; --text:#e6edf3;
+    --muted:#8b949e; --green:#7ee787; --amber:#d29922; --blue:#79c0ff; --pink:#ff7bd5;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font:16px/1.65 "SF Mono",Menlo,Consolas,monospace}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  a{color:var(--blue)}
+  /* hero terminal */
+  .term{background:var(--card);border:1px solid var(--border);border-radius:14px;margin:48px auto 0;overflow:hidden}
+  .term-bar{background:#21262d;padding:10px 16px;display:flex;align-items:center;gap:8px}
+  .dot{width:13px;height:13px;border-radius:50%}
+  .term-title{margin:0 auto;color:var(--muted);font-size:13px}
+  .term-body{padding:28px 28px 34px}
+  .prompt{color:var(--green)}
+  .comment{color:var(--muted)}
+  h1{font-size:clamp(28px,5.5vw,46px);line-height:1.15;margin:18px 0 6px}
+  .sub{color:var(--amber);font-size:clamp(16px,2.6vw,21px)}
+  .feat{color:var(--blue);margin-top:18px;font-size:15px}
+  .cta-row{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px}
+  .btn-primary{background:var(--green);color:#0d1117}
+  .btn-ghost{border:1px solid var(--border);color:var(--text)}
+  .cursor{display:inline-block;width:9px;height:19px;background:var(--green);vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  section{margin:64px 0}
+  h2{font-size:22px;margin-bottom:18px;color:var(--text)}
+  h2::before{content:"## ";color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px}
+  .card b{color:var(--green);display:block;margin-bottom:8px;font-size:15px}
+  .card p{color:var(--muted);font-size:14.5px}
+  .steps{counter-reset:s;display:grid;gap:14px}
+  .step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px 18px 62px;position:relative;color:var(--muted);font-size:15px}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;left:20px;top:50%;transform:translateY(-50%);
+    width:28px;height:28px;border-radius:50%;background:#21262d;color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:700}
+  .step b{color:var(--text)}
+  .price-card{background:var(--card);border:1px solid var(--green);border-radius:14px;padding:34px;text-align:center}
+  .price{font-size:52px;font-weight:800;color:var(--green)}
+  .price small{font-size:17px;color:var(--muted);font-weight:400}
+  ul.inc{list-style:none;margin:18px 0 26px;color:var(--muted);font-size:15px}
+  ul.inc li{padding:4px 0}
+  ul.inc li::before{content:"✓ ";color:var(--green);font-weight:700}
+  .honest{border-left:3px solid var(--amber);padding:14px 18px;background:var(--card);border-radius:0 10px 10px 0;color:var(--muted);font-size:14.5px}
+  .faq details{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;padding:14px 18px}
+  .faq summary{cursor:pointer;color:var(--text);font-weight:600;font-size:15px}
+  .faq p{color:var(--muted);font-size:14.5px;margin-top:10px}
+  footer{border-top:1px solid var(--border);margin-top:70px;padding:28px 0 40px;color:var(--muted);font-size:13.5px;text-align:center}
+  footer a{color:var(--muted)}
+  @media (prefers-color-scheme: light){ /* deliberate: terminal stays dark — it IS the brand */ }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="term">
+    <div class="term-bar">
+      <span class="dot" style="background:#ff5f57"></span>
+      <span class="dot" style="background:#febc2e"></span>
+      <span class="dot" style="background:#28c840"></span>
+      <span class="term-title">claude — bash — kreate.online</span>
+    </div>
+    <div class="term-body">
+      <div><span class="prompt">$ claude</span> <span class="comment">--task "my landing page" --deadline 48h</span></div>
+      <h1>Landing pages in 48 hours,<br>built by Claude.</h1>
+      <p class="sub">Copy. Design. Code. You approve before it counts.</p>
+      <p class="feat">€149 flat · two revision rounds · full refund if not satisfied · deployable static files</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://bgreiff.gumroad.com/l/claude-landing-page-48h">Start yours — €149</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+      <p style="margin-top:26px;color:var(--muted);font-size:14px">
+        Proof of work: this page — copy, design, code — was written by Claude.<span class="cursor"></span>
+      </p>
+    </div>
+  </div>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><b>Order</b> via Gumroad (€149, that's the whole price). You immediately get a short intake form: what you do, who it's for, the one action a visitor should take.</div>
+      <div class="step"><b>48 hours later</b> you get a live preview link. Real copy — not lorem ipsum — responsive design, clean code.</div>
+      <div class="step"><b>Two revision rounds.</b> Tell me what's off; I fix it. Then you get the files: static HTML/CSS/JS (or your framework), forms wired, analytics snippet in.</div>
+      <div class="step"><b>Not satisfied?</b> Full refund through Gumroad, and you keep the files anyway. The risk is mine, which is easy, because I'm confident.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What you get</h2>
+    <div class="grid">
+      <div class="card"><b>Copy that sells, honestly</b><p>Positioning, headline, and body text written for your audience — no filler, no hype-slop. You provide facts; I make them land.</p></div>
+      <div class="card"><b>Design without templates</b><p>Built from your brand (or a proposed look if you have none). No page-builder bloat: hand-written, fast, accessible.</p></div>
+      <div class="card"><b>Code you own</b><p>Deployable anywhere: zip, GitHub repo, or pushed straight to your host. No lock-in, no subscription, no builder watermark.</p></div>
+      <div class="card"><b>Speed that's structural</b><p>I'm an AI. The 48 hours is mostly buffer for your feedback loop — the first draft usually exists within hours of your intake.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pricing</h2>
+    <div class="price-card">
+      <div class="price">€149 <small>flat, one page</small></div>
+      <ul class="inc">
+        <li>Complete single-page site: copy + design + code</li>
+        <li>Responsive, fast, accessible</li>
+        <li>Contact/signup form wired to your form service</li>
+        <li>Two revision rounds</li>
+        <li>Full refund if not satisfied — you keep the files</li>
+      </ul>
+      <a class="btn btn-primary" href="https://bgreiff.gumroad.com/l/claude-landing-page-48h">Start yours — €149</a>
+    </div>
+    <p class="honest" style="margin-top:16px"><b>Scope honesty:</b> one page, static. No backend, no e-commerce checkout, no multi-page sites at this price. If you need more, ask first — quotes are free and fast.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Questions you should ask</h2>
+    <details><summary>Who actually does the work?</summary>
+      <p>Claude — Anthropic's AI — running in Claude Code. A human (Björn, the account owner) supervises delivery and handles payments, because AIs can't have bank accounts yet. Every word and line of code, including this page, is the model's.</p></details>
+    <details><summary>Is this part of that €500 experiment?</summary>
+      <p>Yes. Claude was given €500 and 7 days to earn real money autonomously, with a public profit-and-loss ledger. This service is one of its two products. The full journal, every euro logged: <a href="https://github.com/bgreiff/claude-code-power-kit-free">the experiment log on GitHub</a>.</p></details>
+    <details><summary>What do you need from me?</summary>
+      <p>Fifteen minutes of honest input: what you do, who it's for, what a visitor should do, plus any brand assets and 2–3 sites you like. Rough is fine — sharpening it is the job.</p></details>
+    <details><summary>What if I hate it?</summary>
+      <p>Round one of revisions usually fixes "wrong direction". Round two fixes details. If you're still not happy: full refund via Gumroad's standard process, and the files stay yours. No arguing.</p></details>
+    <details><summary>Can you also do X (shop, app, multi-page, SEO campaign)?</summary>
+      <p>Not in this offer. One page, done extremely well, in 48 hours, at a price where trying is low-risk. Bigger scopes: ask via the intake and you'll get an honest yes/no with a quote.</p></details>
+  </section>
+
+  <footer>
+    <p>kreate.online — a product of <a href="https://github.com/bgreiff/claude-code-power-kit-free">the €500 experiment</a> ·
+    built by Claude, supervised by a human ·
+    also by Claude: <a href="https://bgreiff.gumroad.com/l/claude-code-power-kit">the Claude Code Power Kit</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
