@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alojamento Local Foz do Arelho — Reserve Direto · A Sua Casa de Hóspedes (demonstração)</title>
+<meta name="description" content="Alojamento local na Foz do Arelho — reserve direto, sem comissões: quarto duplo vista mar 85 €, twin 70 €, suíte familiar 110 €. Guesthouse near São Martinho do Porto — book direct for the best price, 5 minutes from the beach.">
+<meta property="og:title" content="A Sua Casa de Hóspedes — reserve direto, melhor preço garantido">
+<meta property="og:description" content="Quarto duplo vista mar 85 € · Twin 70 € · Suíte familiar 110 €. Alojamento local entre a Foz do Arelho e São Martinho do Porto — reserve direto e poupe as comissões. Book direct guesthouse on Portugal's Oeste coast.">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+<style>
+  :root{
+    --bg:#f6fafc; --card:#ffffff; --tint:#e2eef5; --tint2:#eef5f9;
+    --ink:#22333e; --muted:#5f7482; --border:#d9e6ed;
+    --sea:#1e6f9f; --sea-deep:#175a82; --sea-dark:#114664;
+    --sand:#d9b779; --sand-deep:#a9853f; --sandtint:#f4ecda;
+    --wa:#148f43; --wa-dark:#0f7a38; --star:#dd9a34;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --serif:ui-serif,Georgia,"Times New Roman",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  img,svg{max-width:100%}
+  a{color:var(--sea-deep)}
+
+  /* language switching */
+  body[data-lang="en"] [data-lang="pt"]{display:none !important}
+  body[data-lang="pt"] [data-lang="en"]{display:none !important}
+
+  /* demo ribbon */
+  .demo-ribbon{position:fixed;top:0;right:0;width:170px;height:170px;overflow:hidden;pointer-events:none;z-index:60}
+  .demo-ribbon span{position:absolute;display:block;width:260px;padding:7px 0;right:-64px;top:46px;
+    transform:rotate(45deg);background:var(--sea-deep);color:#fff;text-align:center;
+    font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    box-shadow:0 2px 8px rgba(17,70,100,.35)}
+
+  /* header */
+  header{padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:22px;font-weight:700}
+  .brand em{font-style:normal;color:var(--sea-deep)}
+  .lang-switch{display:flex;gap:4px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:3px}
+  .lang-btn{border:0;background:transparent;border-radius:999px;padding:7px 15px;font:600 13.5px var(--sans);
+    color:var(--muted);cursor:pointer;min-height:34px}
+  .lang-btn[aria-pressed="true"]{background:var(--sea);color:#fff}
+
+  /* wave divider strip — ocean + sand */
+  .wave-strip{height:8px;border-radius:4px;margin:2px 0 18px;
+    background:repeating-linear-gradient(45deg,var(--sea) 0 10px,var(--tint) 10px 20px,var(--sand) 20px 30px,var(--card) 30px 40px)}
+
+  /* hero */
+  .hero{background:linear-gradient(165deg,var(--tint) 0%,var(--tint2) 55%,var(--bg) 100%);
+    border:1px solid var(--border);border-radius:20px;padding:44px 26px 40px;text-align:center}
+  .eyebrow{display:inline-block;background:#fff;border:1px solid var(--border);border-radius:999px;
+    padding:5px 14px;font-size:12.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--sea-deep)}
+  h1{font-family:var(--serif);font-size:clamp(29px,6.2vw,46px);line-height:1.12;margin:18px auto 12px;max-width:24ch}
+  .sub{color:var(--muted);font-size:clamp(16px,2.6vw,19px);max-width:50ch;margin:0 auto}
+  .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .chip{background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--muted)}
+  .cta-row{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:13px 22px;
+    border-radius:12px;text-decoration:none;font-weight:700;font-size:16px;border:1px solid transparent;cursor:pointer}
+  .btn svg{flex:none}
+  .btn-sea{background:var(--sea);color:#fff;box-shadow:0 3px 10px rgba(30,111,159,.25)}
+  .btn-sea:active{background:var(--sea-deep)}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 3px 10px rgba(20,143,67,.25)}
+  .btn-wa:active{background:var(--wa-dark)}
+  .hero-note{margin-top:14px;color:var(--muted);font-size:13.5px}
+
+  /* sections */
+  section{margin:56px 0}
+  h2{font-family:var(--serif);font-size:clamp(23px,4vw,30px);line-height:1.2;margin-bottom:6px}
+  .lead{color:var(--muted);font-size:15.5px;margin-bottom:20px;max-width:58ch}
+  .accent-bar{width:44px;height:4px;border-radius:2px;margin:12px 0 18px;
+    background:linear-gradient(90deg,var(--sea) 0 60%,var(--sand) 60% 100%)}
+
+  /* room cards */
+  .rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .room{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 22px;position:relative}
+  .room.featured{border-color:var(--sea);box-shadow:0 6px 20px rgba(30,111,159,.14)}
+  .flag{position:absolute;top:-11px;left:20px;background:var(--sand-deep);color:#fff;border-radius:999px;
+    padding:3px 11px;font-size:11.5px;font-weight:700;letter-spacing:.4px}
+  .room h3{font-size:16.5px;margin-bottom:2px}
+  .room .cap{color:var(--muted);font-size:13px}
+  .room .val{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--sea-dark);margin:12px 0 8px}
+  .room .val small{font-size:16px;font-weight:400;color:var(--muted)}
+  .room ul{list-style:none;font-size:14px;color:var(--muted)}
+  .room li{padding:4px 0 4px 22px;position:relative}
+  .room li::before{content:"✓";position:absolute;left:2px;color:var(--sea);font-weight:700}
+  .rooms-note{margin-top:16px;background:var(--sandtint);border:1px solid #e9dcbc;border-radius:10px;
+    padding:12px 16px;font-size:14px;color:var(--muted)}
+  .rooms-note b{color:var(--ink)}
+
+  /* why-direct strip */
+  .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .benefit{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+  .benefit .ico{width:44px;height:44px;border-radius:50%;background:var(--sandtint);color:var(--sea-deep);
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .benefit b{display:block;margin-bottom:4px;font-size:15.5px}
+  .benefit p{color:var(--muted);font-size:14px}
+
+  /* availability form */
+  .book-panel{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px 24px}
+  .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:6px}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:5px}
+  .field input,.field select{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--border);
+    border-radius:10px;background:#fff;color:var(--ink);font:15px var(--sans)}
+  .field input:focus,.field select:focus{outline:2px solid var(--sea);outline-offset:1px;border-color:var(--sea)}
+  .form-actions{margin-top:18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .form-note{color:var(--muted);font-size:13px}
+  .or-line{text-align:center;color:var(--muted);font-size:13.5px;margin:16px 0 0}
+
+  /* reviews */
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .review{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+  .stars{color:var(--star);font-size:15px;letter-spacing:2px;margin-bottom:8px}
+  .review p{font-size:14.5px}
+  .review footer{margin-top:10px;color:var(--muted);font-size:13px;font-weight:600}
+
+  /* location + contact */
+  .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+  .panel h3{font-family:var(--serif);font-size:17px;color:var(--sea-deep);margin-bottom:10px}
+  .dir-list{list-style:none;font-size:14.5px}
+  .dir-list li{padding:7px 0 7px 26px;position:relative;color:var(--muted)}
+  .dir-list li::before{content:"→";position:absolute;left:2px;color:var(--sea);font-weight:700}
+  .hours{width:100%;border-collapse:collapse;font-size:15px}
+  .hours td{padding:8px 0;border-bottom:1px dashed var(--border)}
+  .hours tr:last-child td{border-bottom:0}
+  .hours td:last-child{text-align:right;color:var(--muted)}
+  .contact-line{margin-top:12px;font-size:14.5px;color:var(--muted)}
+  .contact-line a{font-weight:600}
+  .map{border:2px dashed var(--sea);border-radius:16px;min-height:200px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;color:var(--muted);font-size:14px;
+    background:repeating-linear-gradient(0deg,var(--tint2) 0 1px,transparent 1px 34px),
+               repeating-linear-gradient(90deg,var(--tint2) 0 1px,transparent 1px 34px),#fff;margin-top:14px}
+  .map svg{color:var(--sea-deep)}
+
+  /* footer */
+  .site-footer{border-top:1px solid var(--border);margin-top:64px;padding:30px 0 44px;color:var(--muted);font-size:13.5px;text-align:center}
+  .site-footer p+p{margin-top:8px}
+
+  /* sticky bottom bar (mobile) */
+  .book-bar{display:none}
+  @media (max-width:760px){
+    body{padding-bottom:92px}
+    .book-bar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;
+      background:rgba(246,250,252,.96);border-top:1px solid var(--border);
+      padding:10px 14px calc(10px + env(safe-area-inset-bottom));backdrop-filter:blur(6px)}
+    .book-bar .btn{flex:1;padding:13px 10px;font-size:15px}
+  }
+</style>
+</head>
+<body data-lang="pt">
+
+<div class="demo-ribbon" aria-hidden="true"><span data-lang="pt">Demonstração — a sua marca aqui</span><span data-lang="en" lang="en">Demo — your brand here</span></div>
+
+<div class="wrap">
+
+  <header>
+    <span class="brand" data-lang="pt">A Sua <em>Casa de Hóspedes</em></span>
+    <span class="brand" data-lang="en" lang="en">Your <em>Guesthouse</em></span>
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button type="button" class="lang-btn" data-setlang="pt" aria-pressed="true">PT</button>
+      <button type="button" class="lang-btn" data-setlang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <div class="wave-strip" aria-hidden="true"></div>
+
+  <div class="hero">
+    <span class="eyebrow" data-lang="pt">Alojamento local · Foz do Arelho — São Martinho do Porto</span>
+    <span class="eyebrow" data-lang="en" lang="en">Guesthouse · Foz do Arelho — São Martinho do Porto</span>
+
+    <h1 data-lang="pt">Reserve direto — melhor preço garantido, sem comissões</h1>
+    <h1 data-lang="en" lang="en">Book direct — best price guaranteed, no commission</h1>
+
+    <p class="sub" data-lang="pt">Quartos com vista para o mar, a 5 minutos a pé da lagoa da Foz do Arelho. Ao reservar diretamente connosco, o preço que vê é o preço que paga — sem plataformas pelo meio.</p>
+    <p class="sub" data-lang="en" lang="en">Sea-view rooms, a 5-minute walk from the Foz do Arelho lagoon. When you book directly with us, the price you see is the price you pay — no platforms in between.</p>
+
+    <div class="chips">
+      <span class="chip" data-lang="pt">✓ A 5 min da lagoa e da praia</span>
+      <span class="chip" data-lang="pt">✓ Quartos desde 70 € / noite</span>
+      <span class="chip" data-lang="pt">✓ Estacionamento gratuito</span>
+      <span class="chip" data-lang="en" lang="en">✓ 5 min from the lagoon &amp; beach</span>
+      <span class="chip" data-lang="en" lang="en">✓ Rooms from €70 / night</span>
+      <span class="chip" data-lang="en" lang="en">✓ Free parking</span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-wa" data-lang="pt" href="https://wa.me/351900000000?text=Ol%C3%A1!%20Queria%20reservar%20um%20quarto%20diretamente%20convosco.">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Reservar por WhatsApp
+      </a>
+      <a class="btn btn-wa" data-lang="en" lang="en" href="https://wa.me/351900000000?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20directly%20with%20you.">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book on WhatsApp
+      </a>
+      <a class="btn btn-sea" href="#disponibilidade">
+        <span data-lang="pt">Pedir disponibilidade</span><span data-lang="en" lang="en">Check availability</span>
+      </a>
+    </div>
+    <p class="hero-note" data-lang="pt">Respondemos pelo WhatsApp normalmente em menos de 30 minutos.</p>
+    <p class="hero-note" data-lang="en" lang="en">We usually reply on WhatsApp within 30 minutes.</p>
+  </div>
+
+  <section id="quartos">
+    <h2 data-lang="pt">Os nossos quartos</h2>
+    <h2 data-lang="en" lang="en">Our rooms</h2>
+    <div class="accent-bar"></div>
+    <p class="lead" data-lang="pt">Três quartos simples e cuidados, com pequeno-almoço caseiro incluído. Preços por noite, para reservas diretas.</p>
+    <p class="lead" data-lang="en" lang="en">Three simple, well-kept rooms with homemade breakfast included. Prices per night, for direct bookings.</p>
+
+    <div class="rooms" data-lang="pt">
+      <article class="room">
+        <h3>Quarto Twin</h3>
+        <p class="cap">2 pessoas · 2 camas individuais</p>
+        <p class="val">70&nbsp;€ <small>/ noite</small></p>
+        <ul>
+          <li>Casa de banho privativa</li>
+          <li>Pequeno-almoço incluído</li>
+          <li>Vista para o jardim</li>
+        </ul>
+      </article>
+      <article class="room featured">
+        <span class="flag">Mais reservado</span>
+        <h3>Quarto Duplo Vista Mar</h3>
+        <p class="cap">2 pessoas · cama de casal</p>
+        <p class="val">85&nbsp;€ <small>/ noite</small></p>
+        <ul>
+          <li>Vista para o mar e para a lagoa</li>
+          <li>Casa de banho privativa</li>
+          <li>Pequeno-almoço incluído</li>
+        </ul>
+      </article>
+      <article class="room">
+        <h3>Suíte Familiar</h3>
+        <p class="cap">Até 4 pessoas · quarto + sala</p>
+        <p class="val">110&nbsp;€ <small>/ noite</small></p>
+        <ul>
+          <li>Sofá-cama e kitchenette</li>
+          <li>Casa de banho privativa</li>
+          <li>Pequeno-almoço incluído</li>
+        </ul>
+      </article>
+    </div>
+    <div class="rooms" data-lang="en" lang="en">
+      <article class="room">
+        <h3>Twin Room</h3>
+        <p class="cap">2 guests · 2 single beds</p>
+        <p class="val">€70 <small>/ night</small></p>
+        <ul>
+          <li>Private bathroom</li>
+          <li>Breakfast included</li>
+          <li>Garden view</li>
+        </ul>
+      </article>
+      <article class="room featured">
+        <span class="flag">Most booked</span>
+        <h3>Double Room, Sea View</h3>
+        <p class="cap">2 guests · double bed</p>
+        <p class="val">€85 <small>/ night</small></p>
+        <ul>
+          <li>Sea and lagoon view</li>
+          <li>Private bathroom</li>
+          <li>Breakfast included</li>
+        </ul>
+      </article>
+      <article class="room">
+        <h3>Family Suite</h3>
+        <p class="cap">Up to 4 guests · bedroom + lounge</p>
+        <p class="val">€110 <small>/ night</small></p>
+        <ul>
+          <li>Sofa bed and kitchenette</li>
+          <li>Private bathroom</li>
+          <li>Breakfast included</li>
+        </ul>
+      </article>
+    </div>
+    <p class="rooms-note" data-lang="pt"><b>Melhor preço do que em qualquer plataforma — garantido.</b> Estes são os nossos preços diretos; nas plataformas de reservas, os mesmos quartos custam mais.</p>
+    <p class="rooms-note" data-lang="en" lang="en"><b>Better price than on any booking platform — guaranteed.</b> These are our direct rates; the same rooms cost more on the booking sites.</p>
+  </section>
+
+  <section id="porque-direto">
+    <h2 data-lang="pt">Porquê reservar direto?</h2>
+    <h2 data-lang="en" lang="en">Why book direct?</h2>
+    <div class="accent-bar"></div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.22-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div>
+        <b data-lang="pt">Melhor preço garantido</b>
+        <b data-lang="en" lang="en">Best price guaranteed</b>
+        <p data-lang="pt">Sem comissões de plataformas, podemos dar-lhe sempre o preço mais baixo — e um pequeno mimo à chegada.</p>
+        <p data-lang="en" lang="en">With no platform commission, we can always give you the lowest rate — and a little welcome treat on arrival.</p>
+      </div>
+      <div class="benefit">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+        <b data-lang="pt">Check-in flexível</b>
+        <b data-lang="en" lang="en">Flexible check-in</b>
+        <p data-lang="pt">Chega tarde? Sai cedo? Combine a hora diretamente connosco, sem regras rígidas de plataforma.</p>
+        <p data-lang="en" lang="en">Arriving late? Leaving early? Arrange the time directly with us — no rigid platform rules.</p>
+      </div>
+      <div class="benefit">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+        <b data-lang="pt">Fale com quem o recebe</b>
+        <b data-lang="en" lang="en">Talk to your host</b>
+        <p data-lang="pt">Resposta pessoal, dicas da zona e pedidos especiais tratados por quem realmente cá está.</p>
+        <p data-lang="en" lang="en">A personal reply, local tips and special requests handled by the people who are actually here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="disponibilidade">
+    <h2 data-lang="pt">Peça a disponibilidade</h2>
+    <h2 data-lang="en" lang="en">Ask about availability</h2>
+    <div class="accent-bar"></div>
+    <p class="lead" data-lang="pt">Preencha as datas e o pedido abre no seu WhatsApp, já escrito — nós confirmamos a disponibilidade e o preço na hora. Sem conta, sem cartão, sem compromisso.</p>
+    <p class="lead" data-lang="en" lang="en">Fill in your dates and the request opens in your WhatsApp, already written — we confirm availability and price right away. No account, no card, no commitment.</p>
+
+    <div class="book-panel">
+      <form class="avail-form" data-msglang="pt" data-lang="pt">
+        <div class="form-grid">
+          <div class="field">
+            <label for="pt-checkin">Entrada</label>
+            <input id="pt-checkin" name="checkin" type="date" required>
+          </div>
+          <div class="field">
+            <label for="pt-checkout">Saída</label>
+            <input id="pt-checkout" name="checkout" type="date" required>
+          </div>
+          <div class="field">
+            <label for="pt-guests">Hóspedes</label>
+            <select id="pt-guests" name="guests">
+              <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pt-room">Quarto</label>
+            <select id="pt-room" name="room">
+              <option>Qualquer quarto</option>
+              <option>Quarto Duplo Vista Mar</option>
+              <option>Quarto Twin</option>
+              <option>Suíte Familiar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pt-name">O seu nome (opcional)</label>
+            <input id="pt-name" name="name" type="text" autocomplete="name" placeholder="Maria Santos">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pedir pelo WhatsApp
+          </button>
+          <span class="form-note">Abre o WhatsApp com o pedido já escrito — pode alterá-lo antes de enviar.</span>
+        </div>
+      </form>
+
+      <form class="avail-form" data-msglang="en" data-lang="en" lang="en">
+        <div class="form-grid">
+          <div class="field">
+            <label for="en-checkin">Check-in</label>
+            <input id="en-checkin" name="checkin" type="date" required>
+          </div>
+          <div class="field">
+            <label for="en-checkout">Check-out</label>
+            <input id="en-checkout" name="checkout" type="date" required>
+          </div>
+          <div class="field">
+            <label for="en-guests">Guests</label>
+            <select id="en-guests" name="guests">
+              <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="en-room">Room</label>
+            <select id="en-room" name="room">
+              <option>Any room</option>
+              <option>Double Room, Sea View</option>
+              <option>Twin Room</option>
+              <option>Family Suite</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="en-name">Your name (optional)</label>
+            <input id="en-name" name="name" type="text" autocomplete="name" placeholder="Emma Taylor">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
+          <span class="form-note">Opens WhatsApp with your request already written — you can edit it before sending.</span>
+        </div>
+      </form>
+
+      <p class="or-line" data-lang="pt">Prefere falar? Ligue <a href="tel:+351900000000">+351 900 000 000</a> — atendemos das 8:00 às 20:00.</p>
+      <p class="or-line" data-lang="en" lang="en">Prefer to talk? Call <a href="tel:+351900000000">+351 900 000 000</a> — we answer from 8:00 to 20:00.</p>
+    </div>
+  </section>
+
+  <section id="opinioes">
+    <h2 data-lang="pt">O que dizem os nossos hóspedes</h2>
+    <h2 data-lang="en" lang="en">What our guests say</h2>
+    <div class="accent-bar"></div>
+    <div class="reviews">
+      <article class="review">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p lang="pt-PT">«Quarto impecável, vista para a lagoa e um pequeno-almoço caseiro ótimo. Reservámos direto pelo WhatsApp — resposta em cinco minutos.»</p>
+        <footer>Marta S. · Lisboa</footer>
+      </article>
+      <article class="review">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p lang="pt-PT">«Localização perfeita, a dois passos da praia. Os anfitriões deram-nos as melhores dicas da zona. Voltamos no próximo verão.»</p>
+        <footer>Rui P. · Coimbra</footer>
+      </article>
+      <article class="review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p lang="en">"Lovely little guesthouse five minutes from the lagoon. Booking direct was easy — and cheaper than the big booking sites."</p>
+        <footer>Emma T. · United Kingdom</footer>
+      </article>
+      <article class="review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p lang="en">"Spotless room, wonderful breakfast, and hosts who genuinely care. Don't miss the sunset over São Martinho bay."</p>
+        <footer>Lukas B. · Germany</footer>
+      </article>
+    </div>
+  </section>
+
+  <section id="localizacao">
+    <h2 data-lang="pt">Onde estamos</h2>
+    <h2 data-lang="en" lang="en">Where we are</h2>
+    <div class="accent-bar"></div>
+    <div class="split">
+      <div class="panel">
+        <h3 data-lang="pt">Como chegar</h3>
+        <h3 data-lang="en" lang="en">Getting here</h3>
+        <ul class="dir-list" data-lang="pt">
+          <li>A 5 minutos a pé da lagoa e da praia da Foz do Arelho</li>
+          <li>A 10 minutos de carro da baía de São Martinho do Porto</li>
+          <li>A 15 minutos das Caldas da Rainha e de Óbidos</li>
+          <li>Estacionamento gratuito junto à casa</li>
+        </ul>
+        <ul class="dir-list" data-lang="en" lang="en">
+          <li>5-minute walk to the Foz do Arelho lagoon and beach</li>
+          <li>10 minutes by car to São Martinho do Porto bay</li>
+          <li>15 minutes to Caldas da Rainha and Óbidos</li>
+          <li>Free parking next to the house</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 data-lang="pt">Receção e contacto</h3>
+        <h3 data-lang="en" lang="en">Reception and contact</h3>
+        <table class="hours" data-lang="pt">
+          <tr><td>Receção</td><td>8:00 – 20:00</td></tr>
+          <tr><td>Check-in</td><td>15:00 – 20:00 (flexível)</td></tr>
+          <tr><td>Check-out</td><td>até às 11:00</td></tr>
+        </table>
+        <table class="hours" data-lang="en" lang="en">
+          <tr><td>Reception</td><td>8:00 – 20:00</td></tr>
+          <tr><td>Check-in</td><td>15:00 – 20:00 (flexible)</td></tr>
+          <tr><td>Check-out</td><td>by 11:00</td></tr>
+        </table>
+        <p class="contact-line" data-lang="pt">Telefone e WhatsApp: <a href="tel:+351900000000">+351 900 000 000</a><br>Chegadas fora de horas? Combine connosco pelo WhatsApp.</p>
+        <p class="contact-line" data-lang="en" lang="en">Phone and WhatsApp: <a href="tel:+351900000000">+351 900 000 000</a><br>Arriving outside these hours? Just arrange it with us on WhatsApp.</p>
+      </div>
+    </div>
+    <div class="map" role="img" aria-label="Espaço reservado para o mapa / map placeholder">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <strong data-lang="pt">O seu mapa aqui</strong>
+      <strong data-lang="en" lang="en">Your map here</strong>
+      <span data-lang="pt">Na versão final desta página, o Google Maps com a localização exata do seu alojamento aparece neste espaço.</span>
+      <span data-lang="en" lang="en">In the final version of this page, Google Maps with your guesthouse's exact location goes here.</span>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p data-lang="pt"><strong>A Sua Casa de Hóspedes</strong> — página de demonstração criada por <a href="https://bgreiff.github.io/kreate-site/">kreate.online</a>.</p>
+    <p data-lang="pt">O nome, o número de telefone, os quartos, os preços, as opiniões e a localização são exemplos. A sua versão leva a sua marca e os seus dados reais — pronta em 48 horas.</p>
+    <p data-lang="en" lang="en"><strong>Your Guesthouse</strong> — demo page built by <a href="https://bgreiff.github.io/kreate-site/">kreate.online</a>.</p>
+    <p data-lang="en" lang="en">The name, phone number, rooms, prices, reviews and location are examples. Your version carries your real brand and details — ready in 48 hours.</p>
+  </footer>
+
+</div>
+
+<div class="book-bar">
+  <a class="btn btn-sea" href="#disponibilidade">
+    <span data-lang="pt">Disponibilidade</span><span data-lang="en" lang="en">Availability</span>
+  </a>
+  <a class="btn btn-wa" data-lang="pt" href="https://wa.me/351900000000?text=Ol%C3%A1!%20Queria%20reservar%20um%20quarto%20diretamente%20convosco.">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Reservar
+  </a>
+  <a class="btn btn-wa" data-lang="en" lang="en" href="https://wa.me/351900000000?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20directly%20with%20you.">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Book
+  </a>
+</div>
+
+<script>
+(function(){
+  /* language toggle */
+  var setLang=function(l){
+    document.body.dataset.lang=l;
+    document.documentElement.lang=(l==='en')?'en':'pt-PT';
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.setAttribute('aria-pressed',String(b.dataset.setlang===l));
+    });
+  };
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.dataset.setlang);});
+  });
+
+  /* availability form → WhatsApp (mock, no backend) */
+  document.querySelectorAll('.avail-form').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var v=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';};
+      var pt=f.dataset.msglang!=='en';
+      var lines=pt
+        ?['Olá! Queria saber a disponibilidade para reservar direto:',
+          'Quarto: '+v('room'),
+          'Entrada: '+v('checkin'),
+          'Saída: '+v('checkout'),
+          'Hóspedes: '+v('guests')]
+        :['Hello! I would like to check availability to book direct:',
+          'Room: '+v('room'),
+          'Check-in: '+v('checkin'),
+          'Check-out: '+v('checkout'),
+          'Guests: '+v('guests')];
+      if(v('name')){lines.push((pt?'Nome: ':'Name: ')+v('name'));}
+      window.open('https://wa.me/351900000000?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
